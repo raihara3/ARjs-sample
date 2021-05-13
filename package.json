@@ -1,0 +1,34 @@
+{
+  "name": "a-frame-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --config webpack.config.js --mode development",
+    "dev-server": "webpack-dev-server",
+    "start": "run-p webpack dev-server",
+    "setting-ssl": "run-s create-my-key create-my-certificate create-server-key create-server-csr create-server-crt",
+    "create-my-key": "openssl genrsa -des3 -out certificates/myCA.key 2048",
+    "create-my-certificate": "openssl req -x509 -new -nodes -key certificates/myCA.key -sha256 -days 1825 -out certificates/myCA.pem",
+    "create-server-key": "openssl genrsa -out certificates/localhost.key 2048",
+    "create-server-csr": "openssl req -new -key certificates/localhost.key -out certificates/localhost.csr",
+    "create-server-crt": "openssl x509 -req -in certificates/localhost.csr -CA certificates/myCA.pem -CAkey certificates/myCA.key -CAcreateserial -out certificates/localhost.crt -days 1825 -sha256 -extfile localhost.ext"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raihara3/A-Frame-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raihara3/A-Frame-sample/issues"
+  },
+  "homepage": "https://github.com/raihara3/A-Frame-sample#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

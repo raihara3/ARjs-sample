@@ -9,23 +9,35 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="5 0 -7" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    </a-scene>
-
-    <!-- <a-scene>
       <a-assets>
-        <a-asset-item id="model" src="model.gltf"></a-asset-item>
-        <img id="symbol" src="symbol.png"></img>
+        <a-asset-item id="model" src="./public/model/box.gltf"></a-asset-item>
+        <img id="wall" src="./public/texture/wall.jpg" />
+        <img id="floor" src="./public/texture/floor.jpg" />
       </a-assets>
 
-      <a-gltf-model src="#model" position="3 0 -10"></a-gltf-model>
-      <a-entity gltf-model="#model" scale="0.001 0.001 0.001" material="color: red"></a-entity>
+      <!-- <a-camera position="0 2 6"></a-camera> -->
 
-      <a-box position="5 0 -7" rotation="0 45 0" color="#4CC3D9" material="src: #symbol"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    </a-scene> -->
+      <a-entity position="0 2 6">
+        <a-camera look-controls position="0 0 0"></a-camera>
+      </a-entity>
+
+      <a-gltf-model src="#model" position="2.5 0.5 0" scale="0.5 0.5 0.5"></a-gltf-model>
+
+      <!-- <a-box position="5 0 -7" rotation="0 45 0" color="#4CC3D9" material="src: #symbol"></a-box> -->
+      <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere> -->
+      <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+
+      <!-- wall right -->
+      <a-plane position="3 2 0" height="4" width="4" rotation="0 -90 0" material="src: #wall"></a-plane>
+
+      <!-- wall left -->
+      <a-plane position="-3 2 0" height="4" width="4" rotation="0 90 0" material="src: #wall"></a-plane>
+
+      <!-- wall back -->
+      <a-plane position="0 2 -2" height="4" width="6" rotation="0 0 0" material="src: #wall"></a-plane>
+
+      <!-- floor -->
+      <a-plane position="0 0 0" height="4" width="6" rotation="-90 0 0" material="src: #floor"></a-plane>
+    </a-scene>
   </body>
 </html>

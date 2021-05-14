@@ -19,7 +19,7 @@
       </a-assets>
 
       <a-entity position="0 2 0">
-        <a-camera look-controls cursor="rayOrigin: mouse" position="0 0 0"></a-camera>
+        <a-camera id="camera" look-controls cursor="rayOrigin: mouse" position="0 0 0"></a-camera>
       </a-entity>
 
       <a-entity id="room" position="0 -2 0">
@@ -28,22 +28,24 @@
           <a-gltf-model src="#frame" position="0 0 0" scale="1 1 1" rotation="90 0 0"></a-gltf-model>
         </a-entity>
 
-        <a-gltf-model src="#door" position="4 0 0" scale="4 3 3" rotation="0 90 0" door-on-touch="url: http://google.com"></a-gltf-model>
-
         <!-- object -->
-        <a-gltf-model src="#model" position="-3.5 0.5 -2.5" scale="0.5 0.5 0.5" material="src: #wall"></a-gltf-model>
+        <a-gltf-model src="#model" position="-4 0.8 -4" scale="0.8 0.8 0.8" material="src: #wall"></a-gltf-model>
 
         <!-- wall right -->
-        <a-plane position="4 4 0" height="8" width="8" rotation="0 -90 0" material="src: #wall"></a-plane>
+        <a-gltf-model src="#door" position="5 0 0" scale="5 3 3" rotation="0 90 0" door-on-touch="url: http://google.com"></a-gltf-model>
+        <a-plane position="5 5 0" height="10" width="10" rotation="0 -90 0" material="src: #wall"></a-plane>
 
         <!-- wall left -->
-        <a-plane position="-4 4 0" height="8" width="8" rotation="0 90 0" material="src: #wall"></a-plane>
+        <a-plane position="-5 5 0" height="10" width="10" rotation="0 90 0" material="src: #wall"></a-plane>
 
         <!-- wall back -->
-        <a-plane position="0 4 -4" height="8" width="8" rotation="0 0 0" material="src: #wall"></a-plane>
+        <a-plane position="0 5 5" height="10" width="10" rotation="0 180 0" material="src: #wall"></a-plane>
+
+        <!-- wall front -->
+        <a-plane position="0 5 -5" height="10" width="10" rotation="0 0 0" material="src: #wall"></a-plane>
 
         <!-- floor -->
-        <a-plane position="0 0 0" height="8" width="8" rotation="-90 0 0" material="src: #floor"></a-plane>
+        <a-plane position="0 0 0" height="10" width="10" rotation="-90 0 0" material="src: #floor"></a-plane>
       </a-entity>
     </a-scene>
   </body>

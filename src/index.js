@@ -1,15 +1,13 @@
 AFRAME.registerComponent('door-on-touch', {
   schema: {
-    url: {default: ''}
+    room: {default: ''}
   },
 
   init: function () {
+    const data = this.data
     this.el.addEventListener('click', function() {
-      // location.href = data.url
+      console.log(data.room)
       const camera = document.getElementById('camera')
-      // camera.setAttribute('position', {x: 5, y: 0, z: 0})
-
-      // animation="property:position; easing: linear;"
       camera.setAttribute('animation', {
         property: 'position',
         easing: 'linear',

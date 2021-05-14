@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('test')\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("AFRAME.registerComponent('door-on-touch', {\n  schema: {\n    url: {default: ''}\n  },\n\n  init: function () {\n    this.el.addEventListener('click', function() {\n      location.href = data.url\n    })\n  }\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

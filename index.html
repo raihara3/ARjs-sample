@@ -18,8 +18,8 @@
         <img id="photo" src="./public/texture/photo.jpg" />
       </a-assets>
 
-      <a-entity position="0 2 6">
-        <a-camera look-controls position="0 0 0"></a-camera>
+      <a-entity position="0 2 0">
+        <a-camera look-controls cursor="rayOrigin: mouse" position="0 0 0"></a-camera>
       </a-entity>
 
       <a-entity id="room" position="0 -2 0">
@@ -28,7 +28,7 @@
           <a-gltf-model src="#frame" position="0 0 0" scale="1 1 1" rotation="90 0 0"></a-gltf-model>
         </a-entity>
 
-        <a-gltf-model src="#door" position="4 0 0" scale="4 3 3" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#door" position="4 0 0" scale="4 3 3" rotation="0 90 0" door-on-touch="url: http://google.com"></a-gltf-model>
 
         <!-- object -->
         <a-gltf-model src="#model" position="-3.5 0.5 -2.5" scale="0.5 0.5 0.5" material="src: #wall"></a-gltf-model>

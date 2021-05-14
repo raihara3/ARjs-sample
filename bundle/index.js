@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("AFRAME.registerComponent('door-on-touch', {\n  schema: {\n    url: {default: ''}\n  },\n\n  init: function () {\n    this.el.addEventListener('click', function() {\n      location.href = data.url\n    })\n  }\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("AFRAME.registerComponent('door-on-touch', {\n  schema: {\n    url: {default: ''}\n  },\n\n  init: function () {\n    this.el.addEventListener('click', function() {\n      // location.href = data.url\n      const camera = document.getElementById('camera')\n      // camera.setAttribute('position', {x: 5, y: 0, z: 0})\n\n      // animation=\"property:position; easing: linear;\"\n      camera.setAttribute('animation', {\n        property: 'position',\n        easing: 'linear',\n        to: '10 0 0',\n        dur: 1000\n      })\n    })\n  }\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

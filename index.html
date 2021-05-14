@@ -29,23 +29,23 @@
         </a-entity>
 
         <!-- object -->
-        <a-gltf-model src="#model" position="-4 0.8 -4" scale="0.8 0.8 0.8" material="src: #wall"></a-gltf-model>
+        <a-gltf-model src="#model" position="-4.1 0.8 -4.1" scale="0.8 0.8 0.8" material="src: #wall"></a-gltf-model>
 
         <!-- wall right -->
         <a-gltf-model src="#door" position="5 0 0" scale="5 3 3" rotation="0 90 0" door-on-touch="url: http://google.com"></a-gltf-model>
-        <a-plane position="5 5 0" height="10" width="10" rotation="0 -90 0" material="src: #wall"></a-plane>
+        <a-box position="5 5 0" height="10" width="10" depth="0.005" rotation="0 -90 0" material="src: #wall"></a-box>
 
         <!-- wall left -->
-        <a-plane position="-5 5 0" height="10" width="10" rotation="0 90 0" material="src: #wall"></a-plane>
+        <a-box position="-5 5 0" height="10" width="10" depth="0.005" rotation="0 90 0" material="src: #wall"></a-box>
 
         <!-- wall back -->
-        <a-plane position="0 5 5" height="10" width="10" rotation="0 180 0" material="src: #wall"></a-plane>
+        <a-box position="0 5 5" height="10" width="10" depth="0.005" rotation="0 180 0" material="src: #wall"></a-box>
 
         <!-- wall front -->
-        <a-plane position="0 5 -5" height="10" width="10" rotation="0 0 0" material="src: #wall"></a-plane>
+        <a-box position="0 5 -5" height="10" width="10" depth="0.005" rotation="0 0 0" material="src: #wall"></a-box>
 
         <!-- floor -->
-        <a-plane position="0 0 0" height="10" width="10" rotation="-90 0 0" material="src: #floor"></a-plane>
+        <a-box position="0 0 0" height="10" width="10" depth="0.005" rotation="-90 0 0" material="src: #floor"></a-box>
       </a-entity>
     </a-scene>
   </body>

@@ -20,6 +20,8 @@
       <a-entity position="0 2 0">
         <a-camera id="camera" look-controls cursor="rayOrigin: mouse" position="0 0 0"></a-camera>
       </a-entity>
+      <a-entity light="type: ambient; color: #BBB; intensity: 1.2"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.2" position="0 1 1"></a-entity>
 
       <a-entity id="lobby" position="0 -2 0">
         <a-entity id="picture" position="0 3.5 -4.9" scale="1 1 1">
@@ -31,7 +33,7 @@
         <a-gltf-model src="#model" position="-4.1 0.8 -4.1" scale="0.8 0.8 0.8" material="src: #wall"></a-gltf-model>
 
         <!-- wall right -->
-        <a-gltf-model src="#door" position="5 0 0" scale="5 3 3" rotation="0 90 0" door-on-touch="room: room1"></a-gltf-model>
+        <a-gltf-model src="#door" position="5 0 0" scale="3.5 3 3" rotation="0 90 0" door-on-touch="room: room1"></a-gltf-model>
         <a-box position="5 5 0" height="10" width="10" depth="0.005" rotation="0 -90 0" material="src: #wall"></a-box>
 
         <!-- wall left -->

@@ -14,7 +14,10 @@
         <img id="wall" src="./public/texture/wall.jpg" />
         <img id="floor" src="./public/texture/floor.jpg" />
         <img id="wood" src="./public/texture/wood.jpg" />
+        <img id="induction" src="./public/texture/induction.jpg" />
+        <img id="poster_mask" src="./public/texture/poster_mask.jpg" />
         <img id="photo" src="./public/texture/photo.jpg" />
+        <img id="room1_door" src="./public/texture/room1_door.png" />
       </a-assets>
 
       <a-entity position="0 2 0">
@@ -24,15 +27,14 @@
       <a-entity light="type: directional; color: #FFF; intensity: 0.2" position="0 1 1"></a-entity>
 
       <a-entity id="lobby" position="0 -2 0">
-        <a-entity id="picture" position="0 3.5 -4.9" scale="1 1 1">
-          <a-plane position="0 0 0.054" height="2" width="2" rotation="0 0 0" material="color: white; src: #photo"></a-plane>
-          <a-box position="0 0 0" height="2.2" width="2.2" depth="0.1" rotation="0 0 0" material="src: #wood"></a-box>
-        </a-entity>
+        <a-plane height="1.5" width="2" position="-3.2 3.5 -4.954" material="color: white; src: #poster_mask"></a-plane>
+        <a-plane height="1.5" width="2.2" position="0 3.5 -4.954" scale="1.5 1.5 1.5" material="color: white; src: #induction"></a-plane>
 
         <!-- object -->
         <a-gltf-model src="#model" position="-4.1 0.8 -4.1" scale="0.8 0.8 0.8" material="src: #wall"></a-gltf-model>
 
         <!-- wall right -->
+        <a-plane height="2.2" width="1.5" position="4.9 4.5 0" scale="0.8 0.8 0.8" rotation="0 -90 0" material="color: white; src: #room1_door"></a-plane>
         <a-gltf-model src="#door" position="5 0 0" scale="3.5 3 3" rotation="0 90 0" door-on-touch="room: room1"></a-gltf-model>
         <a-box position="5 5 0" height="10" width="10" depth="0.005" rotation="0 -90 0" material="src: #wall"></a-box>
 

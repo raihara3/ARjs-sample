@@ -25,3 +25,16 @@ AFRAME.registerComponent('door-on-touch', {
     })
   }
 })
+
+AFRAME.registerComponent('twitter-on-touch', {
+  schema: {
+    url: {default: ''}
+  },
+
+  init: function () {
+    const data = this.data
+    this.el.addEventListener('click', function() {
+      location.href = data.url
+    })
+  }
+})

@@ -6,4 +6,6 @@ yarn-error.log
 
 # certificates
 /certificates/*.crt
+/certificates/*.csr
+/certificates/*.pem
 /certificates/*.key

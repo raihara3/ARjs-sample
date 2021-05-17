@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const lobbyPos = document.getElementById('lobby').getAttribute('position')\nconst room1Pos = document.getElementById('room1').getAttribute('position')\n\nAFRAME.registerComponent('door-on-touch', {\n  schema: {\n    room: {default: ''}\n  },\n\n  init: function () {\n    const data = this.data\n    this.el.addEventListener('click', function() {\n      const camera = document.getElementById('camera')\n      const animation = camera.getAttribute('animation')\n\n      let toPos = '0 0 0'\n      if(data.room === 'room1') {\n        toPos = animation.to === `${lobbyPos.x} 0 ${lobbyPos.z}`\n          ? `${room1Pos.x} 0 ${room1Pos.z}`\n          : `${lobbyPos.x} 0 ${lobbyPos.z}`\n      }\n\n      camera.setAttribute('animation', {\n        to: toPos,\n      })\n    })\n  }\n})\n\nAFRAME.registerComponent('twitter-on-touch', {\n  schema: {\n    url: {default: ''}\n  },\n\n  init: function () {\n    const data = this.data\n    this.el.addEventListener('click', function() {\n      location.href = data.url\n    })\n  }\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

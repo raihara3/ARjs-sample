@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("let markerVisible = {\n  m0: false,\n  m1: false\n}\n\nAFRAME.registerComponent('registerevents', {\n  init: function() {\n    let marker = this.el\n\n    marker.addEventListener('markerFound', function() {\n      markerVisible[ marker.id ] = true\n    })\n\n    marker.addEventListener('markerLost', function() {\n      markerVisible[ marker.id ] = false\n    })\n  }\n})\n\nAFRAME.registerComponent('run', {\n  init: function() {\n    this.m0 = document.querySelector(\"#m0\")\n    this.m1 = document.querySelector(\"#m1\")\n    this.p0 = new THREE.Vector3()\n    this.p1 = new THREE.Vector3()\n\n    let geometry = new THREE.CylinderGeometry( 0.05, 0.05, 1, 12 )\n    geometry.applyMatrix( new THREE.Matrix4().makeTranslation( 0, 0.5, 0 ) )\n    geometry.applyMatrix( new THREE.Matrix4().makeRotationX( THREE.Math.degToRad( 90 ) ) )\n    let material = new THREE.MeshLambertMaterial( {color: 0xFF0000} )\n    this.cylinder = new THREE.Mesh( geometry, material )\n    this.cylinderGroup = document.querySelector('#cylinderGroup').object3D\n    this.cylinderGroup.add( this.cylinder )\n  },\n\n  tick: function(time, deltaTime) {\n    if(markerVisible[\"m0\"] && markerVisible[\"m1\"]) {\n      this.m0.object3D.getWorldPosition(this.p0)\n      this.m1.object3D.getWorldPosition(this.p1)\n\n      let distance = this.p0.distanceTo(this.p1)\n      console.log(distance)\n      this.cylinderGroup.lookAt(this.p1)\n      this.cylinder.scale.set(1,1,distance)\n      // this.cylinder.visible = true\n    } else {\n      // this.cylinder.visible = false\n    }\n  }\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
